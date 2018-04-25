@@ -21,12 +21,37 @@ public class Caculadora {
 		System.out.print("Input Type: ");
 		inputType = sc.next();
 		
+		switch (inputType) {
+		case "integer":
+			
+		case "double":
+			break;
+		default:
+			System.err.println("Invalid. Try again.");
+			System.exit(0);
+		}
+		
 		System.out.println("Please type 'add' to add");
 		System.out.println("Please type 'subtract' to subtract");
 		System.out.println("Please type 'multiply' to multiply");
 		System.out.println("Please type 'divide' to divide");
 		System.out.print("Choose operators: ");
 		operaciones = sc.next();
+		
+		switch (operaciones) {
+		case "add":
+			
+		case "subtract":
+		
+		case "multiply":
+			
+		case "divide":
+			break;
+		default:
+			System.err.println("Invalid. Try again.");
+			System.exit(0);
+		}
+		
 		
 		//Methods
 		gettingOperaciones(operaciones, inputType);
@@ -38,8 +63,10 @@ public class Caculadora {
 	
 	{
 		//Declarations
-		Double num1, num2;
-		Integer numero1, numero2;
+		Double num1 = 0.0;
+		Double num2 = 0.0;
+		Integer numero1 = 0;
+		Integer numero2 = 0;
 		String number1, number2;
 				
 		//Input and output
@@ -52,10 +79,16 @@ public class Caculadora {
 		number2 = sc.next();
 		
 		//Conversions
-		numero1 =Integer.parseInt(number1);
-		numero2 = Integer.parseInt(number2);
-		num1 = Double.parseDouble(number1);
-		num2 = Double.parseDouble(number2);
+		try {
+			numero1 =Integer.parseInt(number1);
+			numero2 = Integer.parseInt(number2);
+			num1 = Double.parseDouble(number1);
+			num2 = Double.parseDouble(number2);
+
+		} catch (NumberFormatException e) {
+			System.err.println("Does that look like a number to you? Please try again.");
+			System.exit(0);
+		}
 		
 		//Switch and IFs
 		switch(inputType) {
@@ -76,6 +109,10 @@ public class Caculadora {
 			}
 			else if(operaciones.equals("divide"))
 			{
+				if (num2 == 0 || numero2 == 0) {
+					System.err.println("Cannot divide by 0. Please try again.");
+					System.exit(0);
+				}
 				doDivisionInt(numero1, numero2);
 			}
 			break;
@@ -95,6 +132,10 @@ public class Caculadora {
 			}
 			else if(operaciones.equals("divide"))
 			{
+				if (num2 == 0 || numero2 == 0) {
+					System.err.println("Cannot divide by 0. Please try again.");
+					System.exit(0);
+				}
 				doDivisionDou(num1, num2);
 			}
 			break;
