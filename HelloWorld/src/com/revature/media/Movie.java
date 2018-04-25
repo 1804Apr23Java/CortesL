@@ -1,6 +1,6 @@
 package com.revature.media;
 
-public class Movie extends Media {
+public class Movie extends Media implements Comparable<Movie> {
 	
 	public Movie(String author, String title, int yearPublished, String genre)
 	{
@@ -29,6 +29,12 @@ public class Movie extends Media {
 	@Override
 	public String toString() {
 		return "Movie [producer=" + producer + ", title = " + title + ", Year Published " + yearPublished + ",Genre " + genre + "]";
+	}
+	
+	@Override
+	public int compareTo(Media m)
+	{
+		return this.yearPublished.compareTo(m.getYearPublished());
 	}
 	
 }

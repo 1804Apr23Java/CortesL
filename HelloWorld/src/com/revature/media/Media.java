@@ -1,10 +1,10 @@
 package com.revature.media;
 
-public class Media {
+public class Media implements Comparable<Media>{
 
 	
 	protected String title;
-	protected int yearPublished;
+	protected Integer yearPublished;
 	protected String genre;
 	
 	public String getTitle() {
@@ -29,6 +29,7 @@ public class Media {
 	public String toString() {
 		return "Media [title=" + title + ", yearPublished=" + yearPublished + ", genre=" + genre + "]";
 	}
+
 	
 	
 }
