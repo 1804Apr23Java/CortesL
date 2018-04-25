@@ -29,12 +29,42 @@ public class Driver {
 	//funWithReflections();
 	
 	//System.out.println(genericReflections(mediaList));
-	Book b4 = (Book) objectReflections(b2);
+	//Book b4 = (Book) objectReflections(b2);
+	
+	System.out.println(filterByMediaType(mediaList, "Book"));
+	
 	
 	
 	
 }
+	public static List<Media> filterByMediaType(List<Media> mediaList, String mediaType)
+	{
+		
+		List<Media> filteredList = new ArrayList<Media>();//List alone is an interface
+		try {
+			checkType(mediaType);
+		} catch 
+			(MediaException e)
+		{
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+			return null;
+		}
+		for (Media item : mediaList)
+		{
+			if(item.getClass().getName().equals("com.revature.media." + mediaType)) {
+				filteredList.add(item);
+		}
+		}
+		return filteredList;
+		
+	}
 	
+	public static void checkType(String type) throws MediaException
+	{
+		if(!type.equals("Book") && !type.equals("Movie"))
+			throw new MediaException();
+	}
 	//return first Book from list of objets, if exist
 	public static <T> List<T> genericReflections(List<T> l)
 	{

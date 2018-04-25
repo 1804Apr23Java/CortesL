@@ -84,6 +84,7 @@ public class Caculadora {
 			numero2 = Integer.parseInt(number2);
 			num1 = Double.parseDouble(number1);
 			num2 = Double.parseDouble(number2);
+			
 
 		} catch (NumberFormatException e) {
 			System.err.println("Does that look like a number to you? Please try again.");
