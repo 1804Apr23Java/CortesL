@@ -1,7 +1,9 @@
 package com.revature.comparison;
+import com.revature.media.Movie;
+
 
 import java.util.Collections;
-import java.util.ArraList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MovieCompare {
@@ -16,7 +18,7 @@ public class MovieCompare {
 		movieList.add(m2);
 		movieList.add(m3);
 		System.out.println("Movies before sort");
-				for(Movie m:movieList)
+			//	for(Movie m:movieList)
 					
 		
 	}
