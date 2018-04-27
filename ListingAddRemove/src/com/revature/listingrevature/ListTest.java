@@ -6,7 +6,6 @@ package com.revature.listingrevature;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 
 public class ListTest {
@@ -44,10 +43,5 @@ public class ListTest {
 		
 		this.l.remove(0);
 		assertEquals(null, this.l.retrieve(0));
-	}
-
-	private Object[] retrieve(int i) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
