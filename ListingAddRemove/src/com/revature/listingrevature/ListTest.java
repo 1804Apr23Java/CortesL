@@ -19,12 +19,35 @@ public class ListTest {
 	
 	@Test
 	public void testAddToList() {
-		assertTrue(this.l.add("Hello", 0));
+		this.l.add("Hello", 0);
+		assertEquals("Hello", this.l.retrieve(0));
 	}
 	
 	@Test
-	public void testRetrieveFromList() {
-		assertEquals("Hello", (String) this.l.retrieve(0));
+	public void testGrowList() {
+		this.l.add("hello", 99);
+		this.l.add("bye", 99);
+		assertEquals("hello", this.l.retrieve(100));
+		assertEquals("bye", this.l.retrieve(99));
+	}
+	
+	@Test
+	public void testGrowListAgain() {
+		this.l.add("grow a lot",  500);
+		assertEquals("grow a lot", this.l.retrieve(500));
+	}
+	
+	@Test
+	public void testRemove() {
+		this.l.add("Here", 0);
+		assertEquals("Here", this.l.retrieve(0));
+		
+		this.l.remove(0);
+		assertEquals(null, this.l.retrieve(0));
 	}
 
+	private Object[] retrieve(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

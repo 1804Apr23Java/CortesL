@@ -18,7 +18,10 @@ public class MovieCompare {
 		movieList.add(m2);
 		movieList.add(m3);
 		System.out.println("Movies before sort");
-			//	for(Movie m:movieList)
+			for(Movie m:movieList)
+			{
+				System.out.println(m);
+			}
 					
 		
 	}

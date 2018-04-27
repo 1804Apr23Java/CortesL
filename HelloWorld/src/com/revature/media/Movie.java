@@ -1,6 +1,8 @@
 package com.revature.media;
 
-public class Movie extends Media implements Comparable<Movie> {
+import java.io.Serializable;
+
+public class Movie extends Media implements Comparable<Movie>, Serializable {
 	
 	public Movie(String author, String title, int yearPublished, String genre)
 	{
